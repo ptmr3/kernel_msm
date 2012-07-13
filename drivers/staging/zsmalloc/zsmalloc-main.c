@@ -531,14 +531,6 @@ struct zs_pool *zs_create_pool(const char *name, gfp_t flags)
 	pool->flags = flags;
 	pool->name = name;
 
-	error = 0; /* Success */
-
-cleanup:
-	if (error) {
-		zs_destroy_pool(pool);
-		pool = NULL;
-	}
-
 	return pool;
 }
 EXPORT_SYMBOL_GPL(zs_create_pool);
